@@ -1,0 +1,26 @@
+function titleCase(str) {
+  let strAsList = str.split(" ") 
+  console.log(strAsList)
+  let eachWordAsList = []
+  for(let w=0; w < strAsList.length; w++){
+    eachWordAsList.push(strAsList[w].split(" "))
+  }
+  console.log(eachWordAsList)
+
+  // Capitalization
+  let upperCaseStr = []
+  for(let i=0; i < eachWordAsList.length; i++){
+    if(eachWordAsList[i][0].length > 1){
+      //console.log(eachWordAsList[i][0], eachWordAsList[i][0].length)
+      let x = eachWordAsList[i][0].slice(0, 1).toUpperCase()
+      let y = eachWordAsList[i][0].slice(1).toLowerCase()
+      upperCaseStr.push( x + y )
+    } else {
+      upperCaseStr.push(eachWordAsList[i][0].toUpperCase())
+    }  
+  }
+  console.log(upperCaseStr.join(" "))
+  return upperCaseStr.join(" ")
+}
+
+titleCase("I'm a little tea pot");

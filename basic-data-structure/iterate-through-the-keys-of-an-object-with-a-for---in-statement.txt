@@ -1,0 +1,13 @@
+function countOnline(usersObj) {
+  // Only change code below this line
+  var number = 0;
+  for(let user in usersObj){
+    // let user in usersObj gives you the key only, and not the user obj
+    // console.log(user, typeof user)
+    if(usersObj[user].online){
+      number++;
+    }
+  }
+  return number
+  // Only change code above this line
+}

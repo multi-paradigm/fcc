@@ -1,0 +1,8 @@
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
+
+// Only change code below this line
+var wordBlanks = "When John saw that " + myAdjective + " " + myNoun + ", He " + myAdverb + " " + myVerb + " to a safe place."; // Change this line
+// Only change code above this line

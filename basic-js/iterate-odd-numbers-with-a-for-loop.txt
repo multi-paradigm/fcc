@@ -1,0 +1,10 @@
+// Setup
+var myArray = [];
+
+// Only change code below this line
+
+for(var i = 0; i <= 9; i++){
+    if(i % 2 ){
+        myArray.push(i);
+    }   
+}

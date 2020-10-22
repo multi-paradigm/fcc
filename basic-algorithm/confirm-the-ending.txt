@@ -1,0 +1,9 @@
+// It is not the best/complete solution since things can get complicated with the insertion of the default chars used by RegExp
+function confirmEnding(str, target) {
+  let targetRegex = new RegExp(`${target}$`)
+  if(str.match(targetRegex)){
+    return true
+  }
+  return false
+}
+confirmEnding("Bastian", "n");

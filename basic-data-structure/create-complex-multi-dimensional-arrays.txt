@@ -1,0 +1,23 @@
+let myNestedArray = [
+  // Only change code below this line
+  [], // 2 levels deep
+  [
+    [
+      "deep",
+    ], // 3 levels deep
+  ],
+  [
+    [
+      [
+        "deeper",
+        [
+          "deepest"
+        ]
+      ], // 4 levels deep
+    ]
+  ]
+
+  // Only change code above this line
+];
+
+

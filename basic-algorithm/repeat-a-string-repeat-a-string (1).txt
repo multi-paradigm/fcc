@@ -1,0 +1,16 @@
+function repeatStringNumTimes(str, num) {
+  let arr = str.split("")
+  if(num <= 0){
+    return ""
+  }
+  while(num > 1){
+    for(let c = 0; c <= str.length -1 ; c++){
+      arr.push(str[c])
+    }
+    num--
+  }
+  return arr.join("")
+  
+}
+
+repeatStringNumTimes("abc", 3);

@@ -1,0 +1,24 @@
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  var lThanOrEqualMax; // less than or equal myMax
+  var gThanOrEqualMin; // greater than or equal myMin
+  var number;
+  // The following expression gives you a range
+  lThanOrEqualMax = myMax - myMin;
+  //We add 1 to lThanOrEqualMax (myMax) in order to make it inclusive
+  //See Math.random() documentation for more info.
+  lThanOrEqualMax = lThanOrEqualMax + 1;
+  // greater than or equal myMin
+  gThanOrEqualMin = myMin;
+  // We get a random integer between 0 and lThanOrEqualMax (aka myMax)
+  number = Math.floor(Math.random() * lThanOrEqualMax) ;
+  // But that's not enough
+  console.log(myMin, myMax, number); //Before
+  // Then we make it greater than or equal to myMin
+  number = number + gThanOrEqualMin; //After
+  console.log(myMin, myMax, number);
+  return number;
+  // Only change code above this line
+}
+
+console.log(randomRange(8, 10))
