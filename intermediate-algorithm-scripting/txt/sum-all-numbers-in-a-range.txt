@@ -1,0 +1,16 @@
+
+
+function sumAll(arr) {
+  arr.sort( (a, b)=> a - b)  
+  let start = arr[0]
+  let stop = arr[-1]
+  arr = []
+  while(start <= stop){
+    arr.push(start)
+    start++
+  } 
+  console.log(arr)
+  return arr.reduce( (a,b)=> a + b)
+}
+
+sumAll([1, 4]);

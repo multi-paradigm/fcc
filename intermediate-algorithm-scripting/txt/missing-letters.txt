@@ -1,0 +1,28 @@
+function fearNotLetter(str) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
+  let from = str.length > 1 ? str[1] : str[0] // Exclusive
+  // If an array contains one element only, str.length - 1 is the same as str[0]
+  let to = str[str.length - 1]
+  let range = alphabet.slice(alphabet.indexOf(from), alphabet.indexOf(to))
+  let missingLetter = ""
+  for (let i = 0; i < str.length; i++){  
+    if (range.indexOf(str[i]) >= 0) {
+      let present = range.indexOf(str[i])
+      //delete range[present]
+      range.splice(present, 1)
+    }
+  } 
+  console.log(range)
+  
+  if (range.length === 0) {
+    // All letters are present
+    return undefined
+  } else {
+    // What if more than one letter is missing?
+    range.forEach((letter) => missingLetter += letter)
+    console.log(missingLetter)
+    return missingLetter
+  }
+
+}
+fearNotLetter("abce");

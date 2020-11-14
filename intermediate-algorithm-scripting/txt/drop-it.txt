@@ -1,0 +1,14 @@
+function dropElements(arr, func) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++){
+    let elem = arr[i]
+    let evaluation = func(elem)
+    if (evaluation === true) {
+      newArr = arr.slice(i)
+      break
+    } 
+  }
+  console.log(newArr)
+  return newArr;
+}
+dropElements([1, 2, 3], function(n) {return n < 3; });

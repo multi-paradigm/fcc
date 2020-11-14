@@ -1,0 +1,34 @@
+function addTogether() {
+  
+  if (arguments.length == 2) {
+    let x = typeof arguments[0] === 'number' ? arguments[0] : undefined
+    let y = typeof arguments[1] === 'number' ? arguments[1] : undefined
+
+    if (x && y !== undefined) {
+      return x + y
+    }
+    return undefined
+
+  } else {
+
+    if (arguments.length === 1) {
+      let x = typeof arguments[0] === 'number' ? arguments[0] : undefined
+      if (x !== undefined) {
+        function getY(y) {
+          if (typeof y === 'number') {
+            return x + y
+          } 
+          return undefined
+        }
+        return getY
+      }
+      return undefined
+
+    } else {
+      return undefined
+    }
+  }
+}
+
+
+addTogether(2,3);

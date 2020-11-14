@@ -1,0 +1,11 @@
+function spinalCase(str) {
+
+  let regex = /([A-Z][a-z]+|[a-z]+|[A-Z])/g
+  let word = str.match(regex)
+  let newString = ""
+  word.forEach((w) => newString += word.indexOf(w) != word.length - 1 ? w + '-' : w)
+  console.log(str, word, newString.toLowerCase()) 
+  return newString.toLowerCase()
+}
+
+spinalCase('This Is Spinal Tap');

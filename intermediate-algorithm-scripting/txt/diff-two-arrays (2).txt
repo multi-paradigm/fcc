@@ -1,0 +1,24 @@
+function compare(dis, dat){
+  var arr = []
+  // If dis has any items found in dat
+  for(let i = 0; i <= dat.length - 1; i++){
+    let elem = dat[i]
+    if(dis.indexOf(elem) < 0){
+      arr.push(elem)
+    } 
+  }
+  return arr
+}
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var terms1 = compare(arr1, arr2)
+  var terms2 = compare(arr2, arr1)
+  newArr = [...terms1, ...terms2]
+  console.log(newArr)
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+

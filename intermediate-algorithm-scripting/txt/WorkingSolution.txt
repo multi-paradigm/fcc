@@ -1,0 +1,73 @@
+/*
+
+Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+
+The range will be an array of two numbers that will not necessarily be in numerical order.
+
+For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
+
+*/
+
+function rangeArr(start, end) {
+  var newArr = []
+  while (start <= end) {
+    newArr.push(start)
+    start++
+  }
+  return newArr;
+}
+
+function smallestCommons(arr) {
+  // TODO: Support for more parameters 
+  var x = arr[0] < arr[1] ? arr[0] : arr[1] // min
+  var y = arr[1] > arr[0] ? arr[1] : arr[0] // max
+  let range = rangeArr(x, y)
+  var multiplesOfX = []
+  var multiplesOfY = []
+  let scm = []
+  let until = 105000
+  for (let n = 1; n <= until; n++){
+    // n is a natural number
+    multiplesOfX.push(x * n)
+    multiplesOfY.push(y * n)
+    // Add a function that stops the execution of the for loop when the smallest commom multiple is found
+  }
+  
+  multiplesOfX.forEach(function (m) {
+    if (multiplesOfY.indexOf(m) >= 0) {
+      scm.push(m)
+    }
+  })
+
+  //process.stdout.write(multiplesOfX + '\n\n')
+  //process.stdout.write(multiplesOfY + '\n\n')
+  //process.stdout.write(scm + '\n\n')
+
+  var number = null
+  for(let n = 0; n < scm.length; n++){
+    var index = 0
+    while (index < range.length) {
+      //console.log(scm[n], range[index])
+      if (scm[n] % range[index] === 0) {
+        //console.log(scm[n], range[index], scm[n] % range[index] === 0)
+        if (range[index] === y) {
+          number = scm[n]
+          console.log("Smallest Common Multiple is ", number)
+          n = scm.length
+        }
+      } else {
+        //console.log(scm[n], range[index], scm[n] % range[index] === 0)
+        number = null
+        index = range.length // exit
+      }
+      index++
+    }
+  } // end for
+  return number;
+}
+
+
+smallestCommons([1, 5]);   // 60
+smallestCommons([2, 10]);  // 2520
+smallestCommons([1, 13]);  // 360360
+smallestCommons([23, 18]); // 6056820

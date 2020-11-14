@@ -1,0 +1,19 @@
+
+
+function sumAll(arr) {
+  arr.sort( (a, b)=> a - b)  
+  let start = arr[0]
+  let stop = arr[arr.length - 1]
+  // Some languages allows you to acess the last index of an array by using the following syntax array[-1], but that's not supported in JavaScript
+  console.log(stop)
+  let result = 0;
+  while(start <= stop){
+    result += start
+    start++
+  } 
+  console.log(result)
+  return result
+}
+
+sumAll([1, 4]);
+
